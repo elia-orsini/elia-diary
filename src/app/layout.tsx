@@ -30,20 +30,20 @@ const TimesNewRoman = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Elia Diary",
-  description: "Elia Diary",
+  title: "Elia's Diary",
+  description: "Elia's Diary",
   icons: {
     icon: "/globe.svg",
   },
   openGraph: {
-    title: "Elia Diary",
-    description: "Elia Diary",
+    title: "Elia's Diary",
+    description: "Elia's Diary",
     images: [
       {
         url: "/globe.svg",
         width: 500,
         height: 500,
-        alt: "Elia Diary",
+        alt: "Elia's Diary",
       },
     ],
   },

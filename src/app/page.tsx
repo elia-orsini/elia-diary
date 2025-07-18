@@ -2,31 +2,28 @@ import { client } from "@/sanity/client";
 import { fetchOptions } from "@/constants/constants";
 import Image from "next/image";
 import { urlFor } from "@/sanity/urlFor";
+import ImageGridComponent from "@/components/ImageGridComponent";
 
-const IMAGES = `*[_type == "diaryImages"][]`;
+const IMAGES = `*[_type == "imagesArchive"][]`;
 
 export default async function IndexPage() {
   const projects = await client.fetch<any[]>(IMAGES, {}, fetchOptions);
-  const media = projects[0].images.flat();
+  const media = projects[0].imageGroups.flat();
+
+  const media2024 = media.filter(
+    (media: any) => media.date && new Date(media.date).getFullYear() === 2024
+  );
+  const media2025 = media.filter((media: any) => new Date(media.date).getFullYear() === 2025);
 
   return (
     <main className="flex h-full w-screen flex-col font-normal">
-      <p className="mx-auto mt-40 text-xl font-bold">Just a big collection of random photos.</p>
+      <p className="mx-auto mt-40 text-3xl font-bold italic">Elia's Diary</p>
+      <p className="mx-auto my-20 text-xl font-bold">
+        Just a big collection of photos meant to be taken in <i>all together</i>.
+      </p>
 
-      <div className="mx-auto mt-40 grid grid-cols-3 gap-3">
-        {media.map((m: any) => (
-          <div key={m._key} className="w-20 sm:w-40">
-            <Image
-              src={urlFor(m.image).height(800).url()}
-              alt=""
-              width={"0"}
-              height={"0"}
-              sizes="500px"
-              className={`my-auto h-auto w-[40vw] transition-opacity duration-500`}
-            />
-          </div>
-        ))}
-      </div>
+      <ImageGridComponent media={media} year={2025} />
+      <ImageGridComponent media={media} year={2024} />
     </main>
   );
 }

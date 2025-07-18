@@ -39,7 +39,7 @@ export default function ImageGridComponent({ media, year }: { media: any; year: 
     <div className="mt-3 flex">
       <div className="sticky top-2 h-48 py-3">
         <div
-          style={{ left: `${place ? left - 129 : left - 45}px` }}
+          style={{ left: `${place ? left - 132 : left - 48}px` }}
           className={`absolute -rotate-90 text-right text-3xl font-bold transition-opacity duration-700 ${left ? "opacity-100" : "opacity-0"} ${place ? "mt-[83px] w-[225px]" : ""}`}
         >
           {year}

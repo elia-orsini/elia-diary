@@ -36,7 +36,9 @@ export default function ImageGridComponent({ media, year }: { media: any; year: 
   }, []);
 
   return (
-    <div className="mt-3 flex">
+    <div
+      className={`mt-3 flex transition-opacity duration-[4000ms] ${left ? "opacity-100" : "opacity-0"}`}
+    >
       <div className="sticky top-2 h-48 py-3">
         <div
           style={{ left: `${place ? left - 132 : left - 48}px` }}

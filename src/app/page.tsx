@@ -18,7 +18,7 @@ export default async function IndexPage() {
   return (
     <main className="flex h-full w-screen flex-col font-normal">
       <p className="mx-auto mt-40 text-3xl font-bold italic">Elia's Diary</p>
-      <p className="mx-auto my-20 text-xl font-bold">
+      <p className="mx-auto my-20 text-xl font-bold px-2 text-center">
         Just a big collection of photos meant to be taken in <i>all together</i>.
       </p>
 

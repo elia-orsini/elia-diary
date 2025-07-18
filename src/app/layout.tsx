@@ -31,13 +31,15 @@ const TimesNewRoman = localFont({
 
 export const metadata: Metadata = {
   title: "Elia's Diary",
-  description: "Elia's Diary",
+  description: "Elia's Image Diary",
   icons: {
     icon: "/globe.svg",
   },
   openGraph: {
     title: "Elia's Diary",
-    description: "Elia's Diary",
+    description: "Elia's Image Diary",
+    url: "https://diary.elia-orsini.com",
+    siteName: "Elia's Diary",
     images: [
       {
         url: "/cover.png",
@@ -61,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`text-red-600 no-scrollbar flex flex-col overflow-x-clip bg-gray-100 antialiased ${TimesNewRoman.className} text-[12px]`}
+        className={`no-scrollbar flex flex-col overflow-x-clip bg-gray-100 text-red-600 antialiased ${TimesNewRoman.className} text-[12px]`}
       >
         <div className="flex min-h-dvh flex-col">{children}</div>
       </body>

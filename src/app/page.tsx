@@ -2,7 +2,7 @@ import { client } from "@/sanity/client";
 import { fetchOptions } from "@/constants/constants";
 import ImageGridComponent from "@/components/ImageGridComponent";
 
-const IMAGES = `*[_type == "imagesArchive"][]`;
+const IMAGES = `*[_type == "imagesArchive"][]|order(date asc)`;
 
 export default async function IndexPage() {
   const projects = await client.fetch<any[]>(IMAGES, {}, fetchOptions);
@@ -10,8 +10,8 @@ export default async function IndexPage() {
 
   return (
     <main className="flex h-full w-screen flex-col font-normal">
-      <p className="mx-auto mt-40 text-3xl font-bold italic">Elia&apos;s Diary</p>
-      <p className="mx-auto my-20 px-2 text-center text-xl font-bold">
+      <p className="mx-auto mt-28 text-3xl font-bold italic">Elia&apos;s Diary</p>
+      <p className="mx-auto my-28 px-2 text-center text-xl font-bold">
         Just a big collection of photos meant to be taken in <i>all together</i>.
       </p>
 

@@ -4,13 +4,25 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/urlFor";
 import { useLayoutEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { CustomImage } from "./CustomImage";
 
 export default function ImageGridComponent({ media, year }: { media: any; year: number }) {
   const [left, setLeft] = useState(0);
   const [place, setPlace] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const mediaFiltered = media.filter((m: any) => m.date && new Date(m.date).getFullYear() === year);
+  const mediaFiltered = media
+    .filter((m: any) => m.date && new Date(m.date).getFullYear() === year)
+    // Reverse the array if it's the current year
+    .sort((a: any, b: any) => {
+      if (year === new Date().getFullYear()) {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      } else {
+        return new Date(a.date).getTime() - new Date(b.date).getTime();
+      }
+    });
+
+  year === new Date().getFullYear();
 
   useLayoutEffect(() => {
     const updatePosition = () => {
@@ -65,8 +77,9 @@ export default function ImageGridComponent({ media, year }: { media: any; year: 
               className="relative w-20 sm:w-40"
               onMouseEnter={() => setPlace(m.place)}
             >
-              <Image
+              <CustomImage
                 src={urlFor(img).height(800).url()}
+                blurDataURL={urlFor(img).height(100).blur(50).url()}
                 alt=""
                 width={"0"}
                 height={"0"}

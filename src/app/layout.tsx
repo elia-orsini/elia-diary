@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: "Elia's Diary",
     images: [
       {
-        url: "/globe.svg",
+        url: "/cover.png",
         width: 500,
         height: 500,
         alt: "Elia's Diary",

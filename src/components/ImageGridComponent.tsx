@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { urlFor } from "@/sanity/urlFor";
 import { useLayoutEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -21,8 +20,6 @@ export default function ImageGridComponent({ media, year }: { media: any; year: 
         return new Date(a.date).getTime() - new Date(b.date).getTime();
       }
     });
-
-  year === new Date().getFullYear();
 
   useLayoutEffect(() => {
     const updatePosition = () => {
@@ -74,17 +71,18 @@ export default function ImageGridComponent({ media, year }: { media: any; year: 
           m.images.map((img: any) => (
             <motion.div
               key={img._key}
-              className="relative w-20 sm:w-40"
+              className="relative w-24 sm:w-48"
               onMouseEnter={() => setPlace(m.place)}
+              onTouchEnd={() => setPlace(m.place)}
             >
               <CustomImage
                 src={urlFor(img).height(800).url()}
-                blurDataURL={urlFor(img).height(100).blur(50).url()}
+                blurDataURL={urlFor(img).height(150).blur(30).url()}
                 alt=""
                 width={"0"}
                 height={"0"}
                 sizes="500px"
-                className={`my-auto h-auto w-[40vw] transition-opacity duration-500`}
+                className={`my-auto h-auto w-48 transition-opacity duration-500`}
               />
             </motion.div>
           ))

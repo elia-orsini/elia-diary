@@ -1,19 +1,19 @@
 import React from "react";
 
-const AsciiArt = () => {
+const AsciiArt = ({ imageCount }: { imageCount: number }) => {
   const asciiArt = `
-                __wgNN@"B*P""mp""@d#"@N#Nw__
+                _w##g_${imageCount}_TOTAL_IMAGES_@Nw__
               _g#@0F_a*F#  _*F9m_ ,F9*__9NG#g_
            _mN#F  aM"    #p"    !q@    9NL "9#Qu_
           g#MF _pP"L  _g@"9L_  _g""#__  g"9w_ 0N#p
         _0F jL*"   7_wF     #_gF     9gjF   "bJ  9h_
-       j#  gAF    _@NL     _g@#_      J@u_    2#_  #_
-      ,FF_#" 9_ _#"  "b_  g@   "hg  _#"  !q_ jF "*_09_
-      F N"    #p"      Ng@       '#g"      "w@    "# t
-     j p#    g"9_     g@"9_      gP"#_     gF"q    Pb L
-     0J  k _@   9g_ j#"   "b_  j#"   "b_ _d"   q_ g  ##
-     #F  'NF     "#g"       "Md"       5N#      9W"  j#
-     #k  jFb_    g@"q_     _*"9m_     _*"R_    _#Np  J#
+       j#  gAF    _@NL     _g@EV      J@u_    2#_  #_
+      ,FF_#" 9_ _#"  "b_  g@   ERY  _#"  !q_ jF "*_09_
+      F N"    #p"      Ng@       THI"      "w@    "# t
+     j p#    g"9_     g@"9_      NG_IS     gF"q    Pb L
+     0J  k _@   9g_ j#"   "b_  j#"   _CO _d"   q_ g  ##
+     #F  'NF     "#g"       "Md"       NNE      9W"  j#
+     #k  jFb_    g@"q_     _*"9m_      CTED    _#Np  J#
      tApjF  9g  J"   9M_ _m"    9%_ _*"   "#  gF  9_jNF
       k'N    "q#       9g@        #gF       ##"    #"j
       '_0q_   #"q_    _&"9p_    _g"'L_    _*"#   jAF,'
@@ -27,7 +27,7 @@ const AsciiArt = () => {
                     `;
 
   return (
-    <div className="mx-auto my-24 pr-6">
+    <div className="mx-auto my-16 pr-6">
       <pre
         className="!font-mono text-[7px] font-bold leading-[7px] tracking-[0.2px] sm:text-[10px] sm:leading-[11px]"
         style={{ whiteSpace: "pre", fontFamily: "monospace" }}

@@ -2,12 +2,18 @@ import { client } from "@/sanity/client";
 import { fetchOptions } from "@/constants/constants";
 import ImageGridComponent from "@/components/ImageGridComponent";
 import AsciiArt from "@/components/AsciiArt";
+import ExperienceAscii from "@/components/Exp";
 
 const IMAGES = `*[_type == "imagesArchive"][]|order(date asc)`;
 
 export default async function IndexPage() {
   const projects = await client.fetch<any[]>(IMAGES, {}, fetchOptions);
   const media = projects[0].imageGroups.flat();
+
+  const imageCount = media.reduce(
+    (total: number, item: any) => total + (item.images ? item.images.length : 0),
+    0
+  );
 
   return (
     <main className="mb-28 flex h-full w-screen flex-col font-normal">
@@ -22,7 +28,7 @@ export default async function IndexPage() {
         <i>naturally beatiful things</i>.
       </p>
 
-      <AsciiArt />
+      <AsciiArt imageCount={imageCount} />
 
       <ImageGridComponent media={media} year={2025} />
       <ImageGridComponent media={media} year={2024} />
@@ -30,6 +36,8 @@ export default async function IndexPage() {
       <p className="mx-auto mt-14 font-bold">
         It seems like you reached the end. <i>Thank you</i>.
       </p>
+
+      <ExperienceAscii />
     </main>
   );
 }

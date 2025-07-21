@@ -27,6 +27,9 @@ export default async function IndexPage() {
         It&apos;s really all about <i>blue skies</i>, <i>trees</i>, <i>cool fits</i> or just{" "}
         <i>naturally beatiful things</i>.
       </p>
+      <p className="mx-auto mt-10 px-2 text-center text-xl font-bold italic">
+        A Continuous Creation of Evidence of Existence.
+      </p>
 
       <AsciiArt imageCount={imageCount} />
 

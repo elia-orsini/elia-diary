@@ -1,6 +1,7 @@
 import { client } from "@/sanity/client";
 import { fetchOptions } from "@/constants/constants";
 import ImageGridComponent from "@/components/ImageGridComponent";
+import AsciiArt from "@/components/AsciiArt";
 
 const IMAGES = `*[_type == "imagesArchive"][]|order(date asc)`;
 
@@ -14,12 +15,14 @@ export default async function IndexPage() {
       <p className="mx-auto mt-28 px-2 text-center text-xl font-bold">
         Just a big collection of photos meant to be taken in <i>all together</i>.
       </p>
-      <p className="mx-auto mb-28 mt-10 px-2 text-center text-xl font-bold">
+      <p className="mx-auto mt-10 px-2 text-center text-xl font-bold">
         In retrospect, a pattern emerges.
         <br />
         It&apos;s really all about <i>blue skies</i>, <i>trees</i>, <i>fits</i> or just{" "}
         <i>naturally beatiful things</i>.
       </p>
+
+      <AsciiArt />
 
       <ImageGridComponent media={media} year={2025} />
       <ImageGridComponent media={media} year={2024} />

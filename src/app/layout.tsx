@@ -31,13 +31,15 @@ const TimesNewRoman = localFont({
 
 export const metadata: Metadata = {
   title: "Elia's Diary",
-  description: "Elia's Image Diary",
+  description:
+    "A Continuous Creation of Evidence of Existence. Just a big collection of photos meant to be taken in all together.",
   icons: {
     icon: "/globe.svg",
   },
   openGraph: {
     title: "Elia's Diary",
-    description: "Elia's Image Diary",
+    description:
+      "A Continuous Creation of Evidence of Existence. Just a big collection of photos meant to be taken in all together.",
     url: "https://diary.elia-orsini.com",
     siteName: "Elia's Diary",
     images: [

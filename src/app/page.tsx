@@ -4,7 +4,7 @@ import ImageGridComponent from "@/components/ImageGridComponent";
 import AsciiArt from "@/components/AsciiArt";
 import ExperienceAscii from "@/components/Exp";
 
-const IMAGES = `*[_type == "imagesArchive"][]|order(date asc)`;
+const IMAGES = `*[_type == "imagesArchive"]{imageGroups[]{date, images[]{asset->{_id, metadata{lqip}}}, place, _key}}|order(date asc)`;
 
 export default async function IndexPage() {
   const projects = await client.fetch<any[]>(IMAGES, {}, fetchOptions);

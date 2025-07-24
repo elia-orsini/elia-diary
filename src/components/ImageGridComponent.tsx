@@ -3,7 +3,7 @@
 import { urlFor } from "@/sanity/urlFor";
 import { useLayoutEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CustomImage } from "./CustomImage";
+import Image from "next/image";
 
 export default function ImageGridComponent({ media, year }: { media: any; year: number }) {
   const [left, setLeft] = useState(0);
@@ -30,6 +30,8 @@ export default function ImageGridComponent({ media, year }: { media: any; year: 
 
     return () => window.removeEventListener("resize", updatePosition);
   }, []);
+
+  console.log(media);
 
   return (
     <div
@@ -68,14 +70,15 @@ export default function ImageGridComponent({ media, year }: { media: any; year: 
         {mediaFiltered.map((m: any) =>
           m.images.map((img: any) => (
             <motion.div
-              key={img._key}
+              key={img.asset._id}
               className="relative w-24 sm:w-48"
               onMouseEnter={() => setPlace(m.place)}
               onTouchEnd={() => setPlace(m.place)}
             >
-              <CustomImage
+              <Image
                 src={urlFor(img).height(800).url()}
-                blurDataURL={urlFor(img).height(150).blur(30).url()}
+                blurDataURL={img.asset.metadata.lqip}
+                placeholder="blur"
                 alt=""
                 width={"0"}
                 height={"0"}

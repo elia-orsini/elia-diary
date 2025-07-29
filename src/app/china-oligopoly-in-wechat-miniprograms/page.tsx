@@ -5,22 +5,22 @@ import localFont from "next/font/local";
 const TimesNewRoman = localFont({
   src: [
     {
-      path: "./Times New Roman.ttf",
+      path: "../Times New Roman.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./Times New Roman Bold.ttf",
+      path: "../Times New Roman Bold.ttf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "./Times New Roman Italic.ttf",
+      path: "../Times New Roman Italic.ttf",
       weight: "400",
       style: "italic",
     },
     {
-      path: "./Times New Roman Bold Italic.ttf",
+      path: "../Times New Roman Bold Italic.ttf",
       weight: "700",
       style: "italic",
     },

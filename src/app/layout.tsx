@@ -3,7 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import type { Viewport } from "next";
 
-const TimesNewRoman = localFont({
+export const TimesNewRoman = localFont({
   src: [
     {
       path: "./Times New Roman.ttf",

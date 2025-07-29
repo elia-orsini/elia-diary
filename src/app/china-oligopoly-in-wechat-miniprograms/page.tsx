@@ -1,6 +1,32 @@
 import ExperienceAscii from "@/components/Exp";
 import Image from "next/image";
-import { TimesNewRoman } from "../layout";
+import localFont from "next/font/local";
+
+const TimesNewRoman = localFont({
+  src: [
+    {
+      path: "./Times New Roman.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./Times New Roman Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./Times New Roman Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./Times New Roman Bold Italic.ttf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  variable: "--font-times-new-roman",
+});
 
 export default async function IndexPage() {
   return (

@@ -84,6 +84,7 @@ export default function ImageGridComponent({ media, year }: { media: any; year: 
                 height={"0"}
                 sizes="500px"
                 className={`my-auto h-auto w-48 transition-opacity duration-500`}
+                unoptimized
               />
             </motion.div>
           ))

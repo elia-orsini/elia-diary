@@ -77,7 +77,7 @@ export default function ImageGridComponent({ media, year }: { media: any; year: 
                 src={urlFor(img).height(800).url()}
                 blurDataURL={img.asset.metadata.lqip}
                 placeholder="blur"
-                alt={`${m.place} - ${year} - Elia Orsini`}
+                alt={`${m.place} - ${year} - Elia's Diary`}
                 width={"0"}
                 height={"0"}
                 sizes="500px"

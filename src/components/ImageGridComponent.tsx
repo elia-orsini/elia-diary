@@ -31,8 +31,6 @@ export default function ImageGridComponent({ media, year }: { media: any; year: 
     return () => window.removeEventListener("resize", updatePosition);
   }, []);
 
-  console.log(media);
-
   return (
     <div
       className={`mt-3 flex transition-opacity duration-[4000ms] ${left ? "opacity-100" : "opacity-0"}`}
@@ -64,14 +62,14 @@ export default function ImageGridComponent({ media, year }: { media: any; year: 
       <div
         ref={containerRef}
         id="imageGrid"
-        className="mx-auto grid grid-cols-3 gap-2"
+        className="mx-auto grid grid-cols-2 gap-2 sm:grid-cols-3"
         onMouseLeave={() => setPlace(null)}
       >
         {mediaFiltered.map((m: any) =>
           m.images.map((img: any) => (
             <motion.div
               key={img.asset._id}
-              className="relative w-24 sm:w-48"
+              className="relative w-[9.2rem] border-2 border-transparent hover:border-red-500 sm:w-48"
               onMouseEnter={() => setPlace(m.place)}
               onTouchEnd={() => setPlace(m.place)}
             >
@@ -79,7 +77,7 @@ export default function ImageGridComponent({ media, year }: { media: any; year: 
                 src={urlFor(img).height(800).url()}
                 blurDataURL={img.asset.metadata.lqip}
                 placeholder="blur"
-                alt=""
+                alt={`${m.place} - ${year} - Elia Orsini`}
                 width={"0"}
                 height={"0"}
                 sizes="500px"

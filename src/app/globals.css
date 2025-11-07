@@ -39,6 +39,21 @@ body {
   }
 }
 
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-left: 0.1rem solid #dc2626;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dc2626;
+  border-radius: 0;
+}
+
 .no-scroll {
   overflow: hidden;
 }

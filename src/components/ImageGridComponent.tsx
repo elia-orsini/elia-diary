@@ -69,7 +69,7 @@ export default function ImageGridComponent({ media, year }: { media: any; year: 
           m.images.map((img: any) => (
             <motion.div
               key={img.asset._id}
-              className="relative w-[9.2rem] border-2 border-transparent hover:border-red-500 sm:w-48"
+              className="relative w-[9.2rem] border-2 border-transparent hover:border-[#dc2626] sm:w-48"
               onMouseEnter={() => setPlace(m.place)}
               onTouchEnd={() => setPlace(m.place)}
             >
